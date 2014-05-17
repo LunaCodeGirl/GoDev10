@@ -6,14 +6,25 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+# Heroku requirement
+gem 'rails_12factor', group: :production
+
+# Use activeadmin for admin backend
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+# Use LESS and Bootstrap for CSS
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+# Use devise for authentication
+gem 'devise'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -32,14 +43,22 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
 
-# Use unicorn as the app server
-# gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :development, :test do
+  gem 'pry'
+  # gem 'pry-debugger'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'awesome_print'
+  gem 'hirb'
+  gem 'pry-stack_explorer'
+  gem 'coolline'
+  gem 'rspec-rails'
+  gem 'debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'  
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
