@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+
+# Use postgres in production
+gem 'pg', group: :production
 
 # Heroku requirement
 gem 'rails_12factor', group: :production
@@ -27,7 +30,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
