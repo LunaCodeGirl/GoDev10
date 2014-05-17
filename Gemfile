@@ -13,6 +13,7 @@ gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
 # Use activeadmin for admin backend
+gem "sass-rails", "4.0.2"
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use LESS and Bootstrap for CSS
