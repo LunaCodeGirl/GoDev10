@@ -42,11 +42,13 @@ ActiveAdmin.register Form do
     end
 
     f.has_many :fields do |field|
-      field.inputs "Field" do
-        field.input :field_type, as: :select, :collection => ['Text', 'Text Box', 'Checkbox', 'Date', 'Email', 'Phone Number']
-        field.input :value 
-        #repeat as necessary for all fields
-      end
+      # field.inputs "Field" do
+      #   field.input :field_type, as: :select, :collection => ['Text', 'Text Box', 'Checkbox', 'Date', 'Email', 'Phone Number']
+      #   field.input :value 
+      #   #repeat as necessary for all fields
+      # end
+      field.template.render partial: 'field'
+      # render :partial => "field", :locals => {:field => field }
     end
 
     f.actions
