@@ -5,8 +5,14 @@ class Field < ActiveRecord::Base
     visible false
 
     edit do
-      field :name do
-        partial "field_edit"
+      field :field_type, :enum do
+        def enum
+          ['Text', 'Date', 'Radio', 'Select']
+        end
+      end
+
+      field :value do
+        partial "field_value"
       end
     end
   end
