@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ["Formulate", "Admin"]
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -31,4 +33,8 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  # Exclude certain models
+  # config.excluded_models << "Field"
+
 end
